@@ -54,8 +54,8 @@ docker run hello-world
 
 1. **Clone this repo:**
    ```bash
-   git clone <repo-url>
-   cd docker-workshop
+   git clone https://github.com/H3xKatana/workshop-labs.git
+   cd ech-docker-workshop
    ```
 
 2. **Start with Exercise 1:**

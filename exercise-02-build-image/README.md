@@ -174,6 +174,13 @@ curl http://localhost:3000
 - [ ] App runs as non-root user
 
 ---
+## Task 2 
+
+=> can you change the port of the app into 7000 ? 
+=> and can you curl it from your machine direcly ?
+==> give it another unique port 
+
+--- 
 
 ## What You Learned
 

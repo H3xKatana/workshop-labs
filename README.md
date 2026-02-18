@@ -17,7 +17,8 @@ This workshop takes you from Docker basics to building production-ready containe
 1. ✅ Running existing containers
 2. ✅ Building custom images
 3. ✅ Multi-container orchestration with Docker Compose
-4. ✅ Production hardening and best practices
+4. ✅ Container registries and image distribution
+5. ✅ Production hardening and best practices
 
 ---
 
@@ -44,9 +45,10 @@ docker run hello-world
 | [Exercise 1](exercise-01-first-container/) | First Container | 10 min | `commands.sh` |
 | [Exercise 2](exercise-02-build-image/) | Build Your Image | 20 min | `Dockerfile`, `server.js` |
 | [Exercise 3](exercise-03-compose/) | Multi-Container App | 30 min | `docker-compose.yml` |
-| [Exercise 4](exercise-04-production/) | Production Hardening | 20 min | Optimized `Dockerfile` |
+| [Exercise 4](exercise-04-container-registry/) | Container Registry | 25 min | `Dockerfile`, `server.js` |
+| [Exercise 5](exercise-05-production/) | Production Hardening | 20 min | Optimized `Dockerfile` |
 
-**Total hands-on time:** ~80 minutes
+**Total hands-on time:** ~105 minutes
 
 ---
 
@@ -113,8 +115,8 @@ By the end of this workshop, you will be able to:
 - 🐳 Run and manage Docker containers
 - 🐳 Write efficient Dockerfiles
 - 🐳 Orchestrate multi-container applications
+- 🐳 Push images to container registries
 - 🐳 Apply security best practices
-- 🐳 Push images to registries
 
 **Happy Dockering!** 🐳
 

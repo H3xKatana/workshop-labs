@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="C"><head><title>Ignite : ECH docker workshop</title><meta property="og:title" content="Ignite : ECH docker workshop"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}div#\:\$p > svg > foreignObject > section{--focus-outlineColor:light-dark(#0969da, #1f6feb);--fgColor-default:light-dark(#1f2328, #f0f6fc);--fgColor-muted:light-dark(#59636e, #9198a1);--fgColor-accent:light-dark(#0969da, #4493f8);--fgColor-success:light-dark(#1a7f37, #3fb950);--fgColor-attention:light-dark(#9a6700, #d29922);--fgColor-danger:light-dark(#d1242f, #f85149);--fgColor-done:light-dark(#8250df, #ab7df8);--bgColor-default:light-dark(#fff, #0d1117);--bgColor-muted:light-dark(#f6f8fa, #151b23);--bgColor-neutral-muted:light-dark(#818b981f, #656c7633);--bgColor-attention-muted:light-dark(#fff8c5, #bb800926);--borderColor-default:light-dark(#d1d9e0, #3d444d);--borderColor-muted:light-dark(#d1d9e0b3, #3d444db3);--borderColor-neutral-muted:light-dark(#d1d9e0b3, #3d444db3);--borderColor-accent-emphasis:light-dark(#0969da, #1f6feb);--borderColor-success-emphasis:light-dark(#1a7f37, #238636);--borderColor-attention-emphasis:light-dark(#9a6700, #9e6a03);--borderColor-danger-emphasis:light-dark(#cf222e, #da3633);--borderColor-done-emphasis:light-dark(#8250df, #8957e5);--color-prettylights-syntax-comment:light-dark(#59636e, #9198a1);--color-prettylights-syntax-constant:light-dark(#0550ae, #79c0ff);--color-prettylights-syntax-constant-other-reference-link:light-dark(#0a3069, #a5d6ff);--color-prettylights-syntax-entity:light-dark(#6639ba, #d2a8ff);--color-prettylights-syntax-storage-modifier-import:light-dark(#1f2328, #f0f6fc);--color-prettylights-syntax-entity-tag:light-dark(#0550ae, #7ee787);--color-prettylights-syntax-keyword:light-dark(#cf222e, #ff7b72);--color-prettylights-syntax-string:light-dark(#0a3069, #a5d6ff);--color-prettylights-syntax-variable:light-dark(#953800, #ffa657);--color-prettylights-syntax-brackethighlighter-unmatched:light-dark(#82071e, #f85149);--color-prettylights-syntax-brackethighlighter-angle:light-dark(#59636e, #9198a1);--color-prettylights-syntax-invalid-illegal-text:light-dark(#f6f8fa, #f0f6fc);--color-prettylights-syntax-invalid-illegal-bg:light-dark(#82071e, #8e1519);--color-prettylights-syntax-carriage-return-text:light-dark(#f6f8fa, #f0f6fc);--color-prettylights-syntax-carriage-return-bg:light-dark(#cf222e, #b62324);--color-prettylights-syntax-string-regexp:light-dark(#116329, #7ee787);--color-prettylights-syntax-markup-list:light-dark(#3b2300, #f2cc60);--color-prettylights-syntax-markup-heading:light-dark(#0550ae, #1f6feb);--color-prettylights-syntax-markup-italic:light-dark(#1f2328, #f0f6fc);--color-prettylights-syntax-markup-bold:light-dark(#1f2328, #f0f6fc);--color-prettylights-syntax-markup-deleted-text:light-dark(#82071e, #ffdcd7);--color-prettylights-syntax-markup-deleted-bg:light-dark(#ffebe9, #67060c);--color-prettylights-syntax-markup-inserted-text:light-dark(#116329, #aff5b4);--color-prettylights-syntax-markup-inserted-bg:light-dark(#dafbe1, #033a16);--color-prettylights-syntax-markup-changed-text:light-dark(#953800, #ffdfb6);--color-prettylights-syntax-markup-changed-bg:light-dark(#ffd8b5, #5a1e02);--color-prettylights-syntax-markup-ignored-text:light-dark(#d1d9e0, #f0f6fc);--color-prettylights-syntax-markup-ignored-bg:light-dark(#0550ae, #1158c7);--color-prettylights-syntax-meta-diff-range:light-dark(#8250df, #d2a8ff);--color-prettylights-syntax-sublimelinter-gutter-mark:light-dark(#818b98, #3d444d);--base-size-4:calc(var(--marpit-root-font-size, 1rem) * 0.25);--base-size-8:calc(var(--marpit-root-font-size, 1rem) * 0.5);--base-size-16:calc(var(--marpit-root-font-size, 1rem) * 1);--base-size-24:calc(var(--marpit-root-font-size, 1rem) * 1.5);--base-size-40:calc(var(--marpit-root-font-size, 1rem) * 2.5);--base-text-weight-normal:400;--base-text-weight-medium:500;--base-text-weight-semibold:600;--fontStack-monospace:ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;--fgColor-accent:Highlight;}/*!
+<!DOCTYPE html><html lang="en-GB"><head><title>Ignite : ECH docker workshop</title><meta property="og:title" content="Ignite : ECH docker workshop"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:1280px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}div#\:\$p > svg > foreignObject > section{--focus-outlineColor:light-dark(#0969da, #1f6feb);--fgColor-default:light-dark(#1f2328, #f0f6fc);--fgColor-muted:light-dark(#59636e, #9198a1);--fgColor-accent:light-dark(#0969da, #4493f8);--fgColor-success:light-dark(#1a7f37, #3fb950);--fgColor-attention:light-dark(#9a6700, #d29922);--fgColor-danger:light-dark(#d1242f, #f85149);--fgColor-done:light-dark(#8250df, #ab7df8);--bgColor-default:light-dark(#fff, #0d1117);--bgColor-muted:light-dark(#f6f8fa, #151b23);--bgColor-neutral-muted:light-dark(#818b981f, #656c7633);--bgColor-attention-muted:light-dark(#fff8c5, #bb800926);--borderColor-default:light-dark(#d1d9e0, #3d444d);--borderColor-muted:light-dark(#d1d9e0b3, #3d444db3);--borderColor-neutral-muted:light-dark(#d1d9e0b3, #3d444db3);--borderColor-accent-emphasis:light-dark(#0969da, #1f6feb);--borderColor-success-emphasis:light-dark(#1a7f37, #238636);--borderColor-attention-emphasis:light-dark(#9a6700, #9e6a03);--borderColor-danger-emphasis:light-dark(#cf222e, #da3633);--borderColor-done-emphasis:light-dark(#8250df, #8957e5);--color-prettylights-syntax-comment:light-dark(#59636e, #9198a1);--color-prettylights-syntax-constant:light-dark(#0550ae, #79c0ff);--color-prettylights-syntax-constant-other-reference-link:light-dark(#0a3069, #a5d6ff);--color-prettylights-syntax-entity:light-dark(#6639ba, #d2a8ff);--color-prettylights-syntax-storage-modifier-import:light-dark(#1f2328, #f0f6fc);--color-prettylights-syntax-entity-tag:light-dark(#0550ae, #7ee787);--color-prettylights-syntax-keyword:light-dark(#cf222e, #ff7b72);--color-prettylights-syntax-string:light-dark(#0a3069, #a5d6ff);--color-prettylights-syntax-variable:light-dark(#953800, #ffa657);--color-prettylights-syntax-brackethighlighter-unmatched:light-dark(#82071e, #f85149);--color-prettylights-syntax-brackethighlighter-angle:light-dark(#59636e, #9198a1);--color-prettylights-syntax-invalid-illegal-text:light-dark(#f6f8fa, #f0f6fc);--color-prettylights-syntax-invalid-illegal-bg:light-dark(#82071e, #8e1519);--color-prettylights-syntax-carriage-return-text:light-dark(#f6f8fa, #f0f6fc);--color-prettylights-syntax-carriage-return-bg:light-dark(#cf222e, #b62324);--color-prettylights-syntax-string-regexp:light-dark(#116329, #7ee787);--color-prettylights-syntax-markup-list:light-dark(#3b2300, #f2cc60);--color-prettylights-syntax-markup-heading:light-dark(#0550ae, #1f6feb);--color-prettylights-syntax-markup-italic:light-dark(#1f2328, #f0f6fc);--color-prettylights-syntax-markup-bold:light-dark(#1f2328, #f0f6fc);--color-prettylights-syntax-markup-deleted-text:light-dark(#82071e, #ffdcd7);--color-prettylights-syntax-markup-deleted-bg:light-dark(#ffebe9, #67060c);--color-prettylights-syntax-markup-inserted-text:light-dark(#116329, #aff5b4);--color-prettylights-syntax-markup-inserted-bg:light-dark(#dafbe1, #033a16);--color-prettylights-syntax-markup-changed-text:light-dark(#953800, #ffdfb6);--color-prettylights-syntax-markup-changed-bg:light-dark(#ffd8b5, #5a1e02);--color-prettylights-syntax-markup-ignored-text:light-dark(#d1d9e0, #f0f6fc);--color-prettylights-syntax-markup-ignored-bg:light-dark(#0550ae, #1158c7);--color-prettylights-syntax-meta-diff-range:light-dark(#8250df, #d2a8ff);--color-prettylights-syntax-sublimelinter-gutter-mark:light-dark(#818b98, #3d444d);--base-size-4:calc(var(--marpit-root-font-size, 1rem) * 0.25);--base-size-8:calc(var(--marpit-root-font-size, 1rem) * 0.5);--base-size-16:calc(var(--marpit-root-font-size, 1rem) * 1);--base-size-24:calc(var(--marpit-root-font-size, 1rem) * 1.5);--base-size-40:calc(var(--marpit-root-font-size, 1rem) * 2.5);--base-text-weight-normal:400;--base-text-weight-medium:500;--base-text-weight-semibold:600;--fontStack-monospace:ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;--fgColor-accent:Highlight;}/*!
  * Marp default theme.
  *
  * @theme default
@@ -49,7 +49,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="lead" data-marpit-pagination="1" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="lead" data-marpit-pagination="1" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -90,7 +90,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h1 id="ignite--ech-docker-workshop">Ignite : ECH docker workshop</h1>
 <p><strong>Instructor:</strong> Kara Mohamed Mourtadha (0xKatana)<br />
 <strong>Duration:</strong> 2 hours</p>
@@ -136,7 +136,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="2" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="2" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -177,7 +177,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="agenda-learn-%E2%86%92-practice">Agenda (Learn → Practice)</h2>
 <table>
 <thead>
@@ -272,7 +272,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="3" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="3" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -313,7 +313,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="the-problem">The Problem</h2>
 <p><strong>&quot;It works on my machine&quot;</strong></p>
 <ul>
@@ -364,7 +364,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="4" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -405,7 +405,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="the-real-cost">The Real Cost</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Developer A (macOS)          Production (Linux)
      │                              │
@@ -467,7 +467,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="5" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="5" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -508,7 +508,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="the-solution">The Solution</h2>
 <p><strong>Package app + dependencies together</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>┌─────────────────────────────┐
@@ -563,7 +563,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="6" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="6" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -604,7 +604,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="vm-vs-container">VM vs Container</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Virtual Machine:                Container:
 ┌─────────┐                     ┌─────────┐
@@ -662,7 +662,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="7" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="7" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -703,7 +703,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="container-runtime-architecture">Container Runtime Architecture</h2>
 <p><strong>Docker is not just one thing:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>┌─────────────────────────────────────────┐
@@ -767,7 +767,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="8" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="8" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -808,7 +808,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="linux-namespaces-deep-dive">Linux Namespaces Deep Dive</h2>
 <p><strong>What the container sees vs reality:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Inside Container:               On Host:
@@ -869,7 +869,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="9" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="9" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -910,7 +910,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="cgroups-control-groups">cgroups (Control Groups)</h2>
 <p><strong>Resource limiting in action:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Limit to 512MB RAM and 1 CPU core</span>
@@ -970,7 +970,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="10" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="10" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1011,7 +1011,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="overlay-filesystem">Overlay Filesystem</h2>
 <p><strong>How image layers work:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Container View:         Actual Storage:
@@ -1074,7 +1074,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="11" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="11" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1115,7 +1115,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="container-lifecycle">Container Lifecycle</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>    docker run
         ↓
@@ -1175,7 +1175,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="12" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="12" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1216,7 +1216,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="container-tools-ecosystem">Container Tools Ecosystem</h2>
 <p><strong>Docker is not the only player:</strong></p>
 <table>
@@ -1297,7 +1297,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="13" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="13" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1338,7 +1338,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="docker-vs-podman">Docker vs Podman</h2>
 <p><strong>Key differences:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Docker:                      Podman:
@@ -1400,7 +1400,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="14" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="14" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1441,7 +1441,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="essential-docker-commands">Essential Docker Commands</h2>
 <p><strong>Containers:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">docker ps                    <span class="hljs-comment"># List running</span>
@@ -1499,7 +1499,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="15" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="15" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1540,7 +1540,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="system-management--cleanup">System Management &amp; Cleanup</h2>
 <p><strong>Volumes &amp; Resources:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">docker volume <span class="hljs-built_in">ls</span>             <span class="hljs-comment"># List volumes</span>
@@ -1600,7 +1600,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="16" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="16" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1641,7 +1641,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="docker-guis--tuis">Docker GUIs &amp; TUIs</h2>
 <p><strong>GUI Tools:</strong></p>
 <table>
@@ -1724,7 +1724,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="17" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="17" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1765,7 +1765,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="your-first-container">Your First Container</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Run interactive shell</span>
 docker run -it ubuntu:22.04
@@ -1821,7 +1821,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="18" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="18" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1862,7 +1862,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="essential-flags">Essential Flags</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">docker run \
   -d \                    <span class="hljs-comment"># Detached (background)</span>
@@ -1916,7 +1916,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="19" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="19" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -1957,7 +1957,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="data-persistence">Data Persistence</h2>
 <p><strong>Without volumes:</strong> Data lost on restart <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/></p>
 <p><strong>Named volume:</strong></p>
@@ -2009,7 +2009,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="20" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="20" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2050,7 +2050,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="real-example-database">Real Example: Database</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">docker run -d \
   --name postgres \
@@ -2104,7 +2104,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="lead" data-marpit-pagination="21" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="lead" data-marpit-pagination="21" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2145,7 +2145,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h1 id="%F0%9F%8F%83-exercise-1"><img class="emoji" draggable="false" alt="🏃" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3c3.svg" data-marp-twemoji=""/> Exercise 1</h1>
 <h2 id="run-your-first-container">Run Your First Container</h2>
 <p><strong>15 minutes</strong></p>
@@ -2192,7 +2192,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="22" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="22" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2233,7 +2233,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="building-images">Building Images</h2>
 <p><strong>Dockerfile:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-keyword">FROM</span> node:<span class="hljs-number">18</span>-alpine
@@ -2290,7 +2290,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="23" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="23" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2331,7 +2331,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="build-cache">Build Cache</h2>
 <p><strong>Order matters:</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-comment"># Dependencies change less often ↓</span>
@@ -2384,7 +2384,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="24" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="24" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2425,7 +2425,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="multi-stage-build">Multi-Stage Build</h2>
 <p><strong>Problem:</strong> Build tools bloat production image</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-comment"># Build stage</span>
@@ -2486,7 +2486,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="25" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="25" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2527,7 +2527,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="dockerignore">.dockerignore</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>node_modules
 .git
@@ -2580,7 +2580,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="lead" data-marpit-pagination="26" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="lead" data-marpit-pagination="26" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2621,7 +2621,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h1 id="%F0%9F%8F%83-exercise-2"><img class="emoji" draggable="false" alt="🏃" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3c3.svg" data-marp-twemoji=""/> Exercise 2</h1>
 <h2 id="build-a-docker-image">Build a Docker Image</h2>
 <p><strong>20 minutes</strong></p>
@@ -2668,7 +2668,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="27" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="27" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2709,7 +2709,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="docker-compose">Docker Compose</h2>
 <p><strong>Problem:</strong> Managing multiple containers manually</p>
 <p><strong>Solution:</strong> <code>docker-compose.yml</code></p>
@@ -2777,7 +2777,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="28" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="28" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2818,7 +2818,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="compose-commands">Compose Commands</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash">docker compose up --build    <span class="hljs-comment"># Build &amp; start</span>
 docker compose up -d         <span class="hljs-comment"># Background</span>
@@ -2868,7 +2868,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="29" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="29" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -2909,7 +2909,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="networking">Networking</h2>
 <p>Compose creates a network automatically:</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-yaml"><span class="hljs-attr">services:</span>
@@ -2967,7 +2967,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="lead" data-marpit-pagination="30" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="lead" data-marpit-pagination="30" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3008,7 +3008,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h1 id="%F0%9F%8F%83-exercise-3"><img class="emoji" draggable="false" alt="🏃" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3c3.svg" data-marp-twemoji=""/> Exercise 3</h1>
 <h2 id="docker-compose-1">Docker Compose</h2>
 <p><strong>30 minutes</strong></p>
@@ -3055,7 +3055,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="31" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="31" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3096,7 +3096,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="beyond-single-host">Beyond Single Host</h2>
 <p><strong>What happens at scale?</strong></p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>Single Server:                    Production Cluster:
@@ -3109,7 +3109,6 @@ td {
                                            │
                                     ┌──────▼──────┐
                                     │ Kubernetes  │
-                                    │ (scheduler) │
                                     └─────────────┘
 </code></pre>
 </section>
@@ -3154,7 +3153,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="32" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="32" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3195,7 +3194,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="kubernetes-container-orchestration">Kubernetes: Container Orchestration</h2>
 <p><strong>Why you need it:</strong></p>
 <table>
@@ -3281,7 +3280,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="33" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="33" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3322,27 +3321,18 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="kubernetes-architecture">Kubernetes Architecture</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>┌─────────────────────────────────────────┐
-│         Control Plane                   │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐   │
-│  │ API     │ │Scheduler│ │Controller│   │
-│  │ Server  │ │         │ │ Manager │   │
-│  └────┬────┘ └────┬────┘ └────┬────┘   │
-│       └───────────┼───────────┘         │
-│                   │ etcd                  │
-└───────────────────┼─────────────────────┘
-                    │
-┌───────────────────┼─────────────────────┐
-│         Worker Nodes                    │
-│  ┌──────────┐    ┌──────────┐          │
-│  │ kubelet  │◄───│ kubelet  │          │
-│  │containerd│    │containerd│          │
-│  │ Pods     │    │ Pods     │          │
-│  └──────────┘    └──────────┘          │
-└─────────────────────────────────────────┘
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
+<h2 id="webassembly-wasm">WebAssembly (Wasm)</h2>
+<p><strong>The future of containers?</strong></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>Traditional Container:          Wasm Module:
+┌──────────────┐                ┌──────────────┐
+│ App + OS libs│                │     App      │
+│ 50-200MB     │                │    1-5MB     │
+│ Seconds boot │                │ Milliseconds │
+└──────────────┘                └──────────────┘
 </code></pre>
+<p><strong>Projects:</strong> WasmEdge, Wasmtime, runwasi</p>
+<p><strong>Use case:</strong> Edge computing, plugins, sandboxing</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -3385,7 +3375,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="34" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="34" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3426,27 +3416,20 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="the-cloud-native-landscape">The Cloud Native Landscape</h2>
-<p><strong>What you will encounter:</strong></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>┌────────────────────────────────────────┐
-│          Service Mesh                   │
-│     (Istio, Linkerd, Consul)           │
-│    mTLS, traffic management            │
-├────────────────────────────────────────┤
-│          Observability                  │
-│  (Prometheus, Grafana, Jaeger)         │
-│    Metrics, logs, traces               │
-├────────────────────────────────────────┤
-│          GitOps                         │
-│     (ArgoCD, Flux)                     │
-│    Declarative deployments             │
-├────────────────────────────────────────┤
-│          Registry &amp; Security            │
-│  (Harbor, Trivy, Sigstore)             │
-│    Image scanning, signing             │
-└────────────────────────────────────────┘
-</code></pre>
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
+<h2 id="security-checklist">Security Checklist</h2>
+<p><strong>Images:</strong></p>
+<ul>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Use <code>alpine</code> or <code>distroless</code> bases</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Pin versions: <code>:1.0</code> not <code>:latest</code></li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Non-root user</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> No secrets in images</li>
+</ul>
+<p><strong>Runtime:</strong></p>
+<ul>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Read-only filesystem</li>
+<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Resource limits</li>
+</ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -3489,7 +3472,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="35" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="35" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3530,127 +3513,112 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="serverless-containers">Serverless Containers</h2>
-<p><strong>The next evolution:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Platform</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>AWS Fargate</strong></td>
-<td>Run containers without managing servers</td>
-</tr>
-<tr>
-<td><strong>Google Cloud Run</strong></td>
-<td>Scale to zero, pay per request</td>
-</tr>
-<tr>
-<td><strong>Azure Container Instances</strong></td>
-<td>Simple container execution</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Benefit:</strong> No nodes to manage, just deploy and run</p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-" lang="C" class="invert" data-marpit-pagination="36" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="webassembly-wasm">WebAssembly (Wasm)</h2>
-<p><strong>The future of containers?</strong></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>Traditional Container:          Wasm Module:
-┌──────────────┐                ┌──────────────┐
-│ App + OS libs│                │    App       │
-│ 50-200MB     │                │    1-5MB     │
-│ Seconds boot │                │ Milliseconds │
-└──────────────┘                └──────────────┘
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
+<h2 id="common-mistakes">Common Mistakes</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-comment"># <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/> Root user</span>
+<span class="hljs-keyword">FROM</span> ubuntu
+<span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;app&quot;</span>]</span>
+
+<span class="hljs-comment"># <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Non-root</span>
+<span class="hljs-keyword">FROM</span> ubuntu
+<span class="hljs-keyword">RUN</span><span class="language-bash"> useradd app</span>
+<span class="hljs-keyword">USER</span> app
+<span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;app&quot;</span>]</span>
 </code></pre>
-<p><strong>Projects:</strong> WasmEdge, Wasmtime, runwasi</p>
-<p><strong>Use case:</strong> Edge computing, plugins, sandboxing</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-comment"># <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/> Hardcoded secrets</span>
+<span class="hljs-keyword">ENV</span> API_KEY=xyz123
+
+<span class="hljs-comment"># <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Runtime env</span>
+docker <span class="hljs-keyword">run</span><span class="language-bash"> -e API_KEY=<span class="hljs-variable">$API_KEY</span> app</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="lead" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  color: #e6edf3;
+}
+h1 {
+  color: #58a6ff;
+  font-size: 2em;
+  border-bottom: 3px solid #58a6ff;
+  padding-bottom: 10px;
+}
+h2 {
+  color: #58a6ff;
+  font-size: 1.4em;
+}
+code {
+  font-size: 0.85em;
+  background: #21262d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e6edf3;
+}
+pre {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #238636;
+}
+table {
+  font-size: 0.9em;
+}
+th {
+  background: #21262d;
+  color: #e6edf3;
+}
+td {
+  color: #e6edf3;
+}
+.lead {
+  color: #e6edf3;
+}
+" lang="en-GB" class="lead" data-marpit-pagination="36" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  color: #e6edf3;
+}
+h1 {
+  color: #58a6ff;
+  font-size: 2em;
+  border-bottom: 3px solid #58a6ff;
+  padding-bottom: 10px;
+}
+h2 {
+  color: #58a6ff;
+  font-size: 1.4em;
+}
+code {
+  font-size: 0.85em;
+  background: #21262d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #e6edf3;
+}
+pre {
+  background: #161b22;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #238636;
+}
+table {
+  font-size: 0.9em;
+}
+th {
+  background: #21262d;
+  color: #e6edf3;
+}
+td {
+  color: #e6edf3;
+}
+.lead {
+  color: #e6edf3;
+}
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
+<h1 id="%F0%9F%8F%83-exercise-4"><img class="emoji" draggable="false" alt="🏃" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3c3.svg" data-marp-twemoji=""/> Exercise 4</h1>
+<h2 id="security-hardening">Security Hardening</h2>
+<p><strong>15 minutes</strong></p>
+<p>See <code>exercise-04-production/README.md</code></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -3693,7 +3661,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="37" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="37" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3734,20 +3702,14 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="security-checklist">Security Checklist</h2>
-<p><strong>Images:</strong></p>
-<ul>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Use <code>alpine</code> or <code>distroless</code> bases</li>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Pin versions: <code>:1.0</code> not <code>:latest</code></li>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Non-root user</li>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> No secrets in images</li>
-</ul>
-<p><strong>Runtime:</strong></p>
-<ul>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Read-only filesystem</li>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Resource limits</li>
-</ul>
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
+<h2 id="image-scanning">Image Scanning</h2>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Check for CVEs</span>
+docker scout cves myapp:latest
+
+<span class="hljs-comment"># Or use Trivy</span>
+trivy image myapp:latest
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -3790,7 +3752,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="38" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="38" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -3831,287 +3793,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="common-mistakes">Common Mistakes</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-comment"># <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/> Root user</span>
-<span class="hljs-keyword">FROM</span> ubuntu
-<span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;app&quot;</span>]</span>
-
-<span class="hljs-comment"># <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Non-root</span>
-<span class="hljs-keyword">FROM</span> ubuntu
-<span class="hljs-keyword">RUN</span><span class="language-bash"> useradd app</span>
-<span class="hljs-keyword">USER</span> app
-<span class="hljs-keyword">CMD</span><span class="language-bash"> [<span class="hljs-string">&quot;app&quot;</span>]</span>
-</code></pre>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-dockerfile"><span class="hljs-comment"># <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/> Hardcoded secrets</span>
-<span class="hljs-keyword">ENV</span> API_KEY=xyz123
-
-<span class="hljs-comment"># <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Runtime env</span>
-docker <span class="hljs-keyword">run</span><span class="language-bash"> -e API_KEY=<span class="hljs-variable">$API_KEY</span> app</span>
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="lead" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-" lang="C" class="lead" data-marpit-pagination="39" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h1 id="%F0%9F%8F%83-exercise-4"><img class="emoji" draggable="false" alt="🏃" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f3c3.svg" data-marp-twemoji=""/> Exercise 4</h1>
-<h2 id="security-hardening">Security Hardening</h2>
-<p><strong>15 minutes</strong></p>
-<p>See <code>exercise-04-production/README.md</code></p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-" lang="C" class="invert" data-marpit-pagination="40" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
-<h2 id="image-scanning">Image Scanning</h2>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-bash"><span class="hljs-comment"># Check for CVEs</span>
-docker scout cves myapp:latest
-
-<span class="hljs-comment"># Or use Trivy</span>
-trivy image myapp:latest
-</code></pre>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-" lang="C" class="invert" data-marpit-pagination="41" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 28px;
-  color: #e6edf3;
-}
-h1 {
-  color: #58a6ff;
-  font-size: 2em;
-  border-bottom: 3px solid #58a6ff;
-  padding-bottom: 10px;
-}
-h2 {
-  color: #58a6ff;
-  font-size: 1.4em;
-}
-code {
-  font-size: 0.85em;
-  background: #21262d;
-  padding: 2px 6px;
-  border-radius: 4px;
-  color: #e6edf3;
-}
-pre {
-  background: #161b22;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 4px solid #238636;
-}
-table {
-  font-size: 0.9em;
-}
-th {
-  background: #21262d;
-  color: #e6edf3;
-}
-td {
-  color: #e6edf3;
-}
-.lead {
-  color: #e6edf3;
-}
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="key-takeaways">Key Takeaways</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>┌──────────────────────────────────────────┐
 │  1. Containers = App + Dependencies      │
@@ -4126,7 +3808,7 @@ td {
 Next steps: k8s.io, kind.sigs.k8s.io, cncf.io
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -4167,7 +3849,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="invert" data-marpit-pagination="42" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="invert" data-marpit-pagination="39" style="--class:invert;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -4208,7 +3890,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h2 id="resources">Resources</h2>
 <ul>
 <li><strong>Docker Docs:</strong> docs.docker.com</li>
@@ -4216,7 +3898,7 @@ td {
 <li><strong>Book:</strong> &quot;Docker Deep Dive&quot; - Nigel Poulton</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-class="lead" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="lead" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -4257,7 +3939,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="lead" data-marpit-pagination="43" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="lead" data-marpit-pagination="40" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -4298,11 +3980,11 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h1 id="questions">Questions?</h1>
 <p><strong>GitHub:</strong> @0xkatana</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-class="lead" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="lead" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -4343,7 +4025,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-" lang="C" class="lead" data-marpit-pagination="44" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
+" lang="en-GB" class="lead" data-marpit-pagination="41" style="--class:lead;--paginate:true;--background-color:#0d1117;--color:#e6edf3;--theme:default;--style:section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 28px;
   color: #e6edf3;
@@ -4384,7 +4066,7 @@ td {
 .lead {
   color: #e6edf3;
 }
-;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="44">
+;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="41">
 <h1 id="go-build-something-%F0%9F%9A%80">Go Build Something! <img class="emoji" draggable="false" alt="🚀" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f680.svg" data-marp-twemoji=""/></h1>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()})}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame(()=>{t.style.display=""}))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol(),l=()=>o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o);let c;const d="marpitSVGPolyfill:setZoomFactor,",h=Symbol(),g=Symbol();const p=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[v]:[],i={then:e=>(t?(async()=>{if(void 0===c){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise(t=>{i.addEventListener("load",()=>t())});i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),c=e.getImageData(5,5,1,1).data[3]<128}return c})().then(t=>{null==e||e(t?[v]:[])}):null==e||e([]),i)};return Object.assign(e,i)};let m,u;function v(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(d)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(u=i)}}catch(t){console.error(t)}}));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||u||t.currentScale||1;m!==a&&(m=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}}),!1!==n&&Array.from(e.querySelectorAll("iframe"),({contentWindow:t})=>{null==t||t.postMessage(`${d}${n}`,"null"===window.origin?"*":window.origin)})}function w({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[h])return t[h];let e=!0;const i=()=>{e=!1,delete t[h]};Object.defineProperty(t,h,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await p()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}m=1,u=void 0;const b=Symbol(),y=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,o=t[n].proto();l()&&o!==HTMLElement?i||customElements.define(s,r(o,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach(t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)}))}window[a]=!0})(e),e[b])return e[b];const i=w({target:e}),n=()=>{i(),delete e[b]},o=Object.assign(n,{cleanup:n,update:()=>y(e)});return Object.defineProperty(e,b,{configurable:!0,value:o}),o},f=document.currentScript;y(f?f.getRootNode():document)}();

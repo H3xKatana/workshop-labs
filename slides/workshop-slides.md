@@ -638,7 +638,6 @@ Single Server:                    Production Cluster:
                                            │
                                     ┌──────▼──────┐
                                     │ Kubernetes  │
-                                    │ (scheduler) │
                                     └─────────────┘
 ```
 
@@ -659,71 +658,6 @@ Single Server:                    Production Cluster:
 
 ---
 
-## Kubernetes Architecture
-
-```
-┌─────────────────────────────────────────┐
-│         Control Plane                   │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐   │
-│  │ API     │ │Scheduler│ │Controller│   │
-│  │ Server  │ │         │ │ Manager │   │
-│  └────┬────┘ └────┬────┘ └────┬────┘   │
-│       └───────────┼───────────┘         │
-│                   │ etcd                  │
-└───────────────────┼─────────────────────┘
-                    │
-┌───────────────────┼─────────────────────┐
-│         Worker Nodes                    │
-│  ┌──────────┐    ┌──────────┐          │
-│  │ kubelet  │◄───│ kubelet  │          │
-│  │containerd│    │containerd│          │
-│  │ Pods     │    │ Pods     │          │
-│  └──────────┘    └──────────┘          │
-└─────────────────────────────────────────┘
-```
-
----
-
-## The Cloud Native Landscape
-
-**What you will encounter:**
-
-```
-┌────────────────────────────────────────┐
-│          Service Mesh                   │
-│     (Istio, Linkerd, Consul)           │
-│    mTLS, traffic management            │
-├────────────────────────────────────────┤
-│          Observability                  │
-│  (Prometheus, Grafana, Jaeger)         │
-│    Metrics, logs, traces               │
-├────────────────────────────────────────┤
-│          GitOps                         │
-│     (ArgoCD, Flux)                     │
-│    Declarative deployments             │
-├────────────────────────────────────────┤
-│          Registry & Security            │
-│  (Harbor, Trivy, Sigstore)             │
-│    Image scanning, signing             │
-└────────────────────────────────────────┘
-```
-
----
-
-## Serverless Containers
-
-**The next evolution:**
-
-| Platform | Use Case |
-|----------|----------|
-| **AWS Fargate** | Run containers without managing servers |
-| **Google Cloud Run** | Scale to zero, pay per request |
-| **Azure Container Instances** | Simple container execution |
-
-**Benefit:** No nodes to manage, just deploy and run
-
----
-
 ## WebAssembly (Wasm)
 
 **The future of containers?**
@@ -731,7 +665,7 @@ Single Server:                    Production Cluster:
 ```
 Traditional Container:          Wasm Module:
 ┌──────────────┐                ┌──────────────┐
-│ App + OS libs│                │    App       │
+│ App + OS libs│                │     App      │
 │ 50-200MB     │                │    1-5MB     │
 │ Seconds boot │                │ Milliseconds │
 └──────────────┘                └──────────────┘

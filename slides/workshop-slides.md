@@ -68,8 +68,9 @@ style: |
 | 4 | **Running containers** | **Exercise 1** |
 | 5 | **Building images** | **Exercise 2** |
 | 6 | **Docker Compose** | **Exercise 3** |
-| 7 | Kubernetes & cloud native | - |
-| 8 | **Security** | **Exercise 4** |
+| 7 | **Container Registries** | **Exercise 4** |
+| 8 | Kubernetes & cloud native | - |
+| 9 | **Security** | **Exercise 5** |
 
 ---
 
@@ -623,6 +624,223 @@ See `exercise-03-compose/README.md`
 
 ---
 
+## Container Registries
+
+**Problem:** How do you share and distribute images?
+
+**Solution:** Container Registry = Image storage & distribution
+
+```
+Your Machine              Registry              Production
+     │                       │                      │
+     │  docker build         │                      │
+     ├──────────────────────>│                      │
+     │                       │                      │
+     │  docker push          │                      │
+     ├──────────────────────>│                      │
+     │                       │                      │
+     │                       │  docker pull         │
+     │                       ├─────────────────────>│
+     │                       │                      │
+     │                       │   Store & Distribute │
+     └───────────────────────┴──────────────────────┘
+```
+
+---
+
+## What is a Container Registry?
+
+**Centralized storage for Docker images**
+
+```
+┌─────────────────────────────────────────┐
+│           Container Registry            │
+├─────────────────────────────────────────┤
+│  Organization / User                    │
+│  ├─ Repository: myapp                   │
+│  │  ├─ Tag: v1.0                        │
+│  │  ├─ Tag: v1.1                        │
+│  │  └─ Tag: latest                      │
+│  ├─ Repository: api                     │
+│  └─ Repository: worker                  │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## What is a Container Registry?
+
+**Key Concepts:**
+- **Repository** = Collection of related images (e.g., `myapp`)
+- **Tag** = Version identifier (e.g., `v1.0`, `latest`)
+- **Digest** = Immutable SHA256 hash
+
+---
+
+## Popular Container Registries
+
+| Registry | Provider | Best For | Pricing |
+|----------|----------|----------|---------|
+| **Docker Hub** | Docker | Personal/Open Source | Free (public) |
+| **GHCR** | GitHub | GitHub projects | Free |
+| **Quay.io** | Red Hat | Enterprise | Free tier |
+| **ECR** | AWS | AWS deployments | Pay per GB |
+| **GCR/Artifact Registry** | Google | GCP deployments | Pay per GB |
+| **ACR** | Azure | Azure deployments | Pay per GB |
+| **Harbor** | CNCF | Self-hosted | Free (open source) |
+
+---
+
+## Docker Hub Deep Dive
+
+**Default registry for Docker**
+
+```bash
+# Pull from Docker Hub (default)
+docker pull nginx:latest
+
+# Pull from specific registry
+docker pull ghcr.io/username/myapp:v1.0
+docker pull quay.io/podman/stable
+```
+
+---
+
+## Docker Hub Deep Dive
+
+**Image naming:**
+```
+# Docker Hub (official)
+nginx:latest
+redis:7-alpine
+
+# Docker Hub (user/org)
+username/myapp:v1.0
+myorg/api:2.1.0
+
+# Other registries
+registry.example.com/myapp:v1.0
+ghcr.io/username/myapp:v1.0
+```
+
+---
+
+## Public vs Private Registries
+
+**Public Repositories:**
+- ✅ Free on Docker Hub
+- ✅ Anyone can pull
+- ✅ Great for open source
+- ❌ Code is visible to everyone
+
+---
+
+## Public vs Private Registries
+
+**Private Repositories:**
+- ✅ Restricted access
+- ✅ For proprietary code
+- ❌ Limited free tier (Docker Hub: 1 private repo)
+- ❌ Need authentication
+
+---
+
+## Public vs Private Registries
+
+**Recommendation:**
+- Open source projects → Public
+- Company/internal apps → Private
+
+---
+
+## Image Tagging Strategies
+
+**Don't just use `latest`!**
+
+```bash
+# ❌ Bad practice (unclear version)
+docker push myapp:latest
+
+# ✅ Good practice (semantic versioning)
+docker push myapp:1.0.0
+docker push myapp:1.0
+docker push myapp:1
+
+# ✅ Also tag with latest for convenience
+docker tag myapp:1.0.0 myapp:latest
+docker push myapp:latest
+```
+
+---
+
+## Image Tagging Strategies
+
+**Tag hierarchy:**
+```
+myapp:1.0.0  → Specific version (production)
+myapp:1.0    → Minor version rollup
+myapp:1      → Major version rollup
+myapp:latest → Most recent (convenience)
+```
+
+---
+
+## Pushing Images
+
+**Workflow:**
+
+```bash
+# 1. Build your image
+docker build -t myapp:1.0 .
+
+# 2. Tag with your Docker Hub username
+docker tag myapp:1.0 yourusername/myapp:1.0
+
+# 3. Login (if not already)
+docker login
+
+# 4. Push
+docker push yourusername/myapp:1.0
+
+# 5. Push latest too
+docker tag myapp:1.0 yourusername/myapp:latest
+docker push yourusername/myapp:latest
+```
+
+---
+
+## Pulling Images
+
+**From any machine:**
+
+```bash
+# Login (required for private repos)
+docker login
+
+# Pull your image
+docker pull yourusername/myapp:1.0
+
+# Run it
+docker run -d -p 3000:3000 yourusername/myapp:1.0
+
+# Pull from other registries
+docker pull ghcr.io/username/myapp:v1.0
+docker pull quay.io/organization/app:latest
+```
+---
+
+<!-- _class: lead -->
+
+# 🏃 Exercise 4
+
+## Container Registry & Docker Hub
+
+**25 minutes**
+
+See `exercise-04-container-registry/README.md`
+
+---
+
 ## Beyond Single Host
 
 **What happens at scale?**
@@ -717,13 +935,13 @@ docker run -e API_KEY=$API_KEY app
 
 <!-- _class: lead -->
 
-# 🏃 Exercise 4
+# 🏃 Exercise 5
 
 ## Security Hardening
 
-**15 minutes**
+**20 minutes**
 
-See `exercise-04-production/README.md`
+See `exercise-05-production/README.md`
 
 ---
 

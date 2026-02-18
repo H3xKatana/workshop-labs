@@ -4474,19 +4474,15 @@ td {
   color: #e6edf3;
 }
 ;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="55">
-<h2 id="beyond-single-host">Beyond Single Host</h2>
-<p><strong>What happens at scale?</strong></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>Single Server:                    Production Cluster:
-┌──────────────┐                  ┌────┐ ┌────┐ ┌────┐
-│ Docker       │                  │Node│ │Node│ │Node│
-│ Compose      │                  │ 1  │ │ 2  │ │ 3  │
-│ (1 machine)  │                  └─┬──┘ └─┬──┘ └─┬──┘
-└──────────────┘                    │      │      │
-                                    └──────┼──────┘
-                                           │
-                                    ┌──────▼──────┐
-                                    │ Kubernetes  │
-                                    └─────────────┘
+<h2 id="container-orchestration">Container Orchestration</h2>
+<p><strong>Problem:</strong> Managing containers at scale is hard</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code>Single Container:           Multiple Containers:
+┌──────────────┐            ┌─────────────────┐
+│  docker run  │            │  Which failed?  │
+│  docker ps   │            │  Where's logs?  │
+│  docker logs │            │  How to scale?  │
+└──────────────┘            └─────────────────┘
+   <img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> Easy                      <img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/> Complex
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
@@ -4572,49 +4568,14 @@ td {
   color: #e6edf3;
 }
 ;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="55">
-<h2 id="kubernetes-container-orchestration">Kubernetes: Container Orchestration</h2>
-<p><strong>Why you need it:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Docker Compose</th>
-<th>Kubernetes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Multi-node</td>
-<td><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/></td>
-<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
-</tr>
-<tr>
-<td>Auto-scaling</td>
-<td><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/></td>
-<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
-</tr>
-<tr>
-<td>Self-healing</td>
-<td><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/></td>
-<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
-</tr>
-<tr>
-<td>Rolling updates</td>
-<td><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/></td>
-<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
-</tr>
-<tr>
-<td>Service discovery</td>
-<td>Basic</td>
-<td>Advanced</td>
-</tr>
-<tr>
-<td>Production-ready</td>
-<td><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/274c.svg" data-marp-twemoji=""/></td>
-<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/></td>
-</tr>
-</tbody>
-</table>
+<h2 id="why-orchestration">Why Orchestration?</h2>
+<p><strong>Production needs:</strong></p>
+<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>High Availability</strong> - Auto-restart failed containers<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Scaling</strong> - Handle traffic spikes automatically<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Rolling Updates</strong> - Zero-downtime deployments<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Resource Optimization</strong> - Pack containers efficiently<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Service Discovery</strong> - Containers find each other<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Configuration Management</strong> - Secrets, configs centralized</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -4699,17 +4660,48 @@ td {
   color: #e6edf3;
 }
 ;color:#e6edf3;background-color:#0d1117;background-image:none;" data-marpit-pagination-total="55">
-<h2 id="webassembly-wasm">WebAssembly (Wasm)</h2>
-<p><strong>The future of containers?</strong></p>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code>Traditional Container:          Wasm Module:
-┌──────────────┐                ┌──────────────┐
-│ App + OS libs│                │     App      │
-│ 50-200MB     │                │    1-5MB     │
-│ Seconds boot │                │ Milliseconds │
-└──────────────┘                └──────────────┘
-</code></pre>
-<p><strong>Projects:</strong> WasmEdge, Wasmtime, runwasi</p>
-<p><strong>Use case:</strong> Edge computing, plugins, sandboxing</p>
+<h2 id="orchestration-tools">Orchestration Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Provider</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kubernetes (K8s)</strong></td>
+<td>CNCF</td>
+<td>Industry standard, any cloud</td>
+</tr>
+<tr>
+<td><strong>Docker Swarm</strong></td>
+<td>Docker</td>
+<td>Simple, Docker-native</td>
+</tr>
+<tr>
+<td><strong>Nomad</strong></td>
+<td>HashiCorp</td>
+<td>Simple, flexible workloads</td>
+</tr>
+<tr>
+<td><strong>ECS</strong></td>
+<td>AWS</td>
+<td>AWS-native deployments</td>
+</tr>
+<tr>
+<td><strong>AKS</strong></td>
+<td>Azure</td>
+<td>Azure-managed K8s</td>
+</tr>
+<tr>
+<td><strong>GKE</strong></td>
+<td>Google</td>
+<td>Google-managed K8s</td>
+</tr>
+</tbody>
+</table>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-class="invert" data-paginate="true" data-background-color="#0d1117" data-color="#e6edf3" data-theme="default" data-style="section {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -5176,10 +5168,10 @@ td {
 │  1. Containers = App + Dependencies      │
 │  2. Linux kernel powers containers       │
 │  3. Dockerfile = Build recipe            │
-│  4. Multi-stage = Smaller images         │
-│  5. Compose = Multi-container            │
-│  6. Kubernetes = Production orchestration│
-│  7. Ecosystem = Docker is just the start │
+│  4. Compose = Multi-container            │
+│  5. Registries = Share &amp; distribute      │
+│  6. Orchestration = Scale &amp; manage       │
+│  7. Security = Production ready          │
 └──────────────────────────────────────────┘
 
 Next steps: k8s.io, kind.sigs.k8s.io, cncf.io

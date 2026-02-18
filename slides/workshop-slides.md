@@ -841,57 +841,45 @@ See `exercise-04-container-registry/README.md`
 
 ---
 
-## Beyond Single Host
+## Container Orchestration
 
-**What happens at scale?**
+**Problem:** Managing containers at scale is hard
 
 ```
-Single Server:                    Production Cluster:
-┌──────────────┐                  ┌────┐ ┌────┐ ┌────┐
-│ Docker       │                  │Node│ │Node│ │Node│
-│ Compose      │                  │ 1  │ │ 2  │ │ 3  │
-│ (1 machine)  │                  └─┬──┘ └─┬──┘ └─┬──┘
-└──────────────┘                    │      │      │
-                                    └──────┼──────┘
-                                           │
-                                    ┌──────▼──────┐
-                                    │ Kubernetes  │
-                                    └─────────────┘
+Single Container:           Multiple Containers:
+┌──────────────┐            ┌─────────────────┐
+│  docker run  │            │  Which failed?  │
+│  docker ps   │            │  Where's logs?  │
+│  docker logs │            │  How to scale?  │
+└──────────────┘            └─────────────────┘
+   ✅ Easy                      ❌ Complex
 ```
 
 ---
 
-## Kubernetes: Container Orchestration
+## Why Orchestration?
 
-**Why you need it:**
+**Production needs:**
 
-| Feature | Docker Compose | Kubernetes |
-|---------|---------------|------------|
-| Multi-node | ❌ | ✅ |
-| Auto-scaling | ❌ | ✅ |
-| Self-healing | ❌ | ✅ |
-| Rolling updates | ❌ | ✅ |
-| Service discovery | Basic | Advanced |
-| Production-ready | ❌ | ✅ |
+✅ **High Availability** - Auto-restart failed containers  
+✅ **Scaling** - Handle traffic spikes automatically  
+✅ **Rolling Updates** - Zero-downtime deployments  
+✅ **Resource Optimization** - Pack containers efficiently  
+✅ **Service Discovery** - Containers find each other  
+✅ **Configuration Management** - Secrets, configs centralized  
 
 ---
 
-## WebAssembly (Wasm)
+## Orchestration Tools
 
-**The future of containers?**
-
-```
-Traditional Container:          Wasm Module:
-┌──────────────┐                ┌──────────────┐
-│ App + OS libs│                │     App      │
-│ 50-200MB     │                │    1-5MB     │
-│ Seconds boot │                │ Milliseconds │
-└──────────────┘                └──────────────┘
-```
-
-**Projects:** WasmEdge, Wasmtime, runwasi
-
-**Use case:** Edge computing, plugins, sandboxing
+| Tool | Provider | Best For |
+|------|----------|----------|
+| **Kubernetes (K8s)** | CNCF | Industry standard, any cloud |
+| **Docker Swarm** | Docker | Simple, Docker-native |
+| **Nomad** | HashiCorp | Simple, flexible workloads |
+| **ECS** | AWS | AWS-native deployments |
+| **AKS** | Azure | Azure-managed K8s |
+| **GKE** | Google | Google-managed K8s |
 
 ---
 
@@ -964,13 +952,11 @@ trivy image myapp:latest
 │  1. Containers = App + Dependencies      │
 │  2. Linux kernel powers containers       │
 │  3. Dockerfile = Build recipe            │
-│  4. Multi-stage = Smaller images         │
-│  5. Compose = Multi-container            │
-│  6. Kubernetes = Production orchestration│
-│  7. Ecosystem = Docker is just the start │
+│  4. Compose = Multi-container            │
+│  5. Registries = Share & distribute      │
+│  6. Orchestration = Scale & manage       │
+│  7. Security = Production ready          │
 └──────────────────────────────────────────┘
-
-Next steps: k8s.io, kind.sigs.k8s.io, cncf.io
 ```
 
 ---

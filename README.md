@@ -1,127 +1,33 @@
-# Docker Workshop: From Zero to Production
+# Workshops
 
-A hands-on workshop covering Docker fundamentals through production-ready practices.
+This is a repository for hosting various technical workshops.
 
-**Instructor:** Kara Mohamed Mourtadha (0xKatana)  
-**Role:** DevOps/SRE Engineer  
-**Duration:** 4-6 hours
+## Available Workshops
 
----
+- [ech-docker-workshop](./ech-docker-workshop/) - Docker fundamentals workshop
 
-## Workshop Overview
+## Adding a New Workshop
 
-This workshop takes you from Docker basics to building production-ready containerized applications through hands-on exercises.
+1. Create a new directory at the root level (e.g., `ech-kubernetes-workshop/`)
+2. Add your workshop content (exercises, slides, etc.)
+3. If your workshop has slides, add a `slides/` subfolder with:
+   - `package.json` with marp-cli dependency
+   - `*.md` files for slide content
+4. The CI pipeline will automatically detect and build slides
 
-### What You'll Learn
+## Slides
 
-1. ✅ Running existing containers
-2. ✅ Building custom images
-3. ✅ Multi-container orchestration with Docker Compose
-4. ✅ Container registries and image distribution
-5. ✅ Production hardening and best practices
+Slides are built using [Marp](https://marp.app/). Each workshop with slides should have:
 
----
-
-## Prerequisites
-
-- Docker Desktop installed
-- Basic command line knowledge
-- Text editor (VSCode recommended)
-- curl or similar HTTP client
-
-### Verify Installation
-
-```bash
-docker --version
-docker run hello-world
+```
+workshop-name/
+└── slides/
+    ├── package.json
+    └── *.md
 ```
 
----
+The CI pipeline automatically builds HTML from markdown slides and uploads them as artifacts.
 
-## Workshop Structure
+## CI/CD
 
-| Exercise | Topic | Duration | Files |
-|----------|-------|----------|-------|
-| [Exercise 1](exercise-01-first-container/) | First Container | 10 min | `commands.sh` |
-| [Exercise 2](exercise-02-build-image/) | Build Your Image | 20 min | `Dockerfile`, `server.js` |
-| [Exercise 3](exercise-03-compose/) | Multi-Container App | 30 min | `docker-compose.yml` |
-| [Exercise 4](exercise-04-container-registry/) | Container Registry | 25 min | `Dockerfile`, `server.js` |
-| [Exercise 5](exercise-05-production/) | Production Hardening | 20 min | Optimized `Dockerfile` |
-
-**Total hands-on time:** ~105 minutes
-
----
-
-## Quick Start
-
-1. **Clone this repo:**
-   ```bash
-   git clone https://github.com/H3xKatana/workshop-labs.git
-   cd ech-docker-workshop
-   ```
-
-2. **Start with Exercise 1:**
-   ```bash
-   cd exercise-01-first-container
-   cat README.md
-   ```
-
-3. **Follow along with the presentation:**
-   - See [slides/workshop-slides.md](slides/workshop-slides.md)
-
----
-
-## Workshop Slides
-
-The full presentation is available at: [slides/workshop-slides.md](slides/workshop-slides.md)
-
----
-
-## Resources
-
-### Official Documentation
-- [Docker Documentation](https://docs.docker.com)
-- [Dockerfile Best Practices](https://docs.docker.com/develop/dev-best-practices/)
-- [Docker Compose Reference](https://docs.docker.com/compose/compose-file/)
-
-### Video Course
-- [Complete Docker Course - DevOps Directive](https://youtu.be/RqTEHSBrYFw)
-- Companion repo: https://github.com/sidpalas/devops-directive-docker-course
-
-### Hands-On Practice Platforms
-- **Iximiuz Labs** (Container Challenges): https://labs.iximiuz.com/challenges?category=containers
-- **Killer Coda** (Interactive Scenarios): https://killercoda.com/
-- **Play with Docker** (Browser-based): https://labs.play-with-docker.com/
-
-### Books
-- "Docker Deep Dive" - Nigel Poulton
-- "The Docker Book" - James Turnbull
-
----
-
-## Getting Help
-
-If you get stuck:
-1. Check the `examples/` directory for reference implementations
-2. Review the solutions in each exercise's README
-3. Ask your instructor or peers
-
----
-
-## Key Takeaways
-
-By the end of this workshop, you will be able to:
-
-- 🐳 Run and manage Docker containers
-- 🐳 Write efficient Dockerfiles
-- 🐳 Orchestrate multi-container applications
-- 🐳 Push images to container registries
-- 🐳 Apply security best practices
-
-**Happy Dockering!** 🐳
-
----
-
-## License
-
-MIT - Feel free to use for your own workshops!
+This repository uses GitHub Actions to build slides. See [.github/workflows/build-slides.yml](./.github/workflows/build-slides.yml) for details.

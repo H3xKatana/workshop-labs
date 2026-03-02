@@ -18,12 +18,180 @@
 In this exercise, you'll:
 - Scan for vulnerabilities in your code (Trivy)
 - Detect secrets accidentally committed (Gitleaks)
+- Build and push a Docker container
 - Add security checks to your pipeline
 - Understand basic security best practices
 
 ---
 
-## Step 1: Why Security in CI/CD?
+## Step 1: Add Docker to Your App
+
+First, create a Dockerfile in your project:
+
+```dockerfile
+# Use Node.js alpine for small size
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install --production
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 3000
+
+# Run the app
+CMD ["node", "server.js"]
+```
+
+Also create `.dockerignore`:
+
+```
+node_modules
+.git
+*.test.js
+README.md
+.env
+```
+
+---
+
+## Step 2: Build Docker Locally
+
+```bash
+# Build the image
+docker build -t myapp:latest .
+
+# Run it
+docker run -p 3000:3000 myapp:latest
+
+# Test it
+curl http://localhost:3000
+```
+
+---
+
+## Step 3: Add Docker to Your Workflow
+
+Update your workflow to build and scan the Docker image:
+
+```yaml
+name: Secure CI/CD with Docker
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  NODE_VERSION: '20'
+  IMAGE_NAME: myapp
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm install
+      - run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm test
+      - name: npm audit
+        run: npm audit --audit-level=high
+        continue-on-error: true
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Trivy scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+
+  build-docker:
+    needs: [lint, test, security]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: false
+          tags: ${{ env.IMAGE_NAME }}:latest
+
+      - name: Scan Docker image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: '${{ env.IMAGE_NAME }}:latest'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+```
+
+---
+
+## Step 4: Why Build Docker in CI/CD?
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│              Docker in CI/CD Pipeline                         │
+│                                                             │
+│  1. Build → Test → Scan → Build Image → Push              │
+│                                                             │
+│  2. Benefits:                                               │
+│     ✅ Consistent builds                                    │
+│     ✅ Scan for vulnerabilities in final image             │
+│     ✅ Ready to deploy                                     │
+│     ✅ Version control for images                          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Step 5: Why Security in CI/CD?
 
 ```
 ┌─────────────────────────────────────────────────────────────┐

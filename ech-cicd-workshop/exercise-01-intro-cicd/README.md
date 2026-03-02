@@ -6,6 +6,66 @@
 
 ---
 
+## How to Follow These Exercises
+
+### Prerequisites
+
+Before starting, make sure you have:
+
+- ✅ **GitHub account** - Sign up at github.com
+- ✅ **Git installed** - Run `git --version` to check
+- ✅ **Docker installed** - Run `docker --version` to check
+- ✅ **Node.js installed** - Run `node --version` (version 18+)
+- ✅ **A code editor** - VS Code recommended
+
+### Exercise Order
+
+Follow the exercises in order:
+
+| Order | Exercise | What You'll Build |
+|-------|----------|-------------------|
+| 1️⃣ | CI/CD Fundamentals | Understanding concepts |
+| 2️⃣ | GitHub Actions Basics | Your first pipeline |
+| 3️⃣ | Building Workflows | Matrix builds, jobs |
+| 4️⃣ | Advanced Patterns | Concurrency, secrets |
+| 5️⃣ | Security Hardening | Trivy, Gitleaks, Docker |
+
+### How Each Exercise Works
+
+Each exercise follows this pattern:
+
+```
+1. Read the README.md - Understand what you'll learn
+2. Look at the code files - See the sample app
+3. Try locally - Test on your machine
+4. Create the workflow - Build the CI/CD pipeline
+5. Push to GitHub - See it run automatically!
+```
+
+### Testing Locally with Act
+
+You can test GitHub Actions locally using **Act**:
+
+```bash
+# Install act
+brew install act    # macOS
+# or
+sudo apt install act  # Linux
+
+# Run the workflow locally
+cd exercise-02-github-actions
+act
+```
+
+### What You'll Need
+
+For each exercise, you'll:
+1. A **GitHub repository** to push your code
+2. The **sample app** files we provide
+3. A **workflow file** in `.github/workflows/`
+
+---
+
 ## Overview
 
 In this exercise, you'll:

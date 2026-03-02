@@ -1,0 +1,66 @@
+name: Build Slides
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  discover-workshops:
+    runs-on: ubuntu-latest
+    outputs:
+      workshops: ${{ steps.discover.outputs.workshops }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Discover workshops with slides
+        id: discover
+        run: |
+          Workshops=$(find . -maxdepth 2 -type d -name "slides" -exec dirname {} \; | grep -E '^\./[^/]+$' | sed 's|^\./||' | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "workshops=$Workshops" >> $GITHUB_OUTPUT
+          echo "Found workshops: $Workshops"
+
+  build-slides:
+    needs: discover-workshops
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        workshop: ${{ fromJson(needs.discover-workshops.outputs.workshops) }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: ./${{ matrix.workshop }}/slides
+        run: pnpm install
+
+      - name: Build slides
+        working-directory: ./${{ matrix.workshop }}/slides
+        run: |
+          if [ -f "package.json" ]; then
+            if grep -q '"build:workshop"' package.json; then
+              pnpm run build:workshop
+            else
+              pnpm run build
+            fi
+          fi
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.workshop }}-slides
+          path: ${{ matrix.workshop }}/slides/*.html
+          retention-days: 30

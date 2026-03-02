@@ -1,4 +1,4 @@
-# Exercise 4: Production Hardening
+# Exercise 5: Production Hardening
 
 **Objective:** Optimize and secure your Docker image for production.
 
@@ -175,11 +175,11 @@ docker push YOURUSERNAME/myapp:v1.0
 
 ## What You Learned
 
-✅ Multi-stage builds for optimization  
-✅ Image scanning for vulnerabilities  
-✅ Read-only filesystems for security  
-✅ Pushing to container registries  
-✅ Production security best practices  
+✅ Multi-stage builds for optimization
+✅ Image scanning for vulnerabilities
+✅ Read-only filesystems for security
+✅ Pushing to container registries
+✅ Production security best practices
 
 ---
 
@@ -232,10 +232,11 @@ CMD ["server.js"]
 
 ## Congratulations!
 
-You've completed all 4 exercises! You now know how to:
+You've completed all 5 exercises! You now know how to:
 - Run containers
 - Build custom images
 - Orchestrate multi-container apps
+- Push images to registries
 - Secure and optimize for production
 
 **Next steps:** Containerize one of your own applications!

@@ -68,8 +68,9 @@ style: |
 | 4 | **Running containers** | **Exercise 1** |
 | 5 | **Building images** | **Exercise 2** |
 | 6 | **Docker Compose** | **Exercise 3** |
-| 7 | Kubernetes & cloud native | - |
-| 8 | **Security** | **Exercise 4** |
+| 7 | **Container Registries** | **Exercise 4** |
+| 8 | Kubernetes & cloud native | - |
+| 9 | **Security** | **Exercise 5** |
 
 ---
 
@@ -623,123 +624,262 @@ See `exercise-03-compose/README.md`
 
 ---
 
-## Beyond Single Host
+## Container Registries
 
-**What happens at scale?**
+**Problem:** How do you share and distribute images?
+
+**Solution:** Container Registry = Image storage & distribution
 
 ```
-Single Server:                    Production Cluster:
-┌──────────────┐                  ┌────┐ ┌────┐ ┌────┐
-│ Docker       │                  │Node│ │Node│ │Node│
-│ Compose      │                  │ 1  │ │ 2  │ │ 3  │
-│ (1 machine)  │                  └─┬──┘ └─┬──┘ └─┬──┘
-└──────────────┘                    │      │      │
-                                    └──────┼──────┘
-                                           │
-                                    ┌──────▼──────┐
-                                    │ Kubernetes  │
-                                    │ (scheduler) │
-                                    └─────────────┘
+Your Machine              Registry              Production
+     │                       │                      │
+     │  docker build         │                      │
+     ├──────────────────────>│                      │
+     │                       │                      │
+     │  docker push          │                      │
+     ├──────────────────────>│                      │
+     │                       │                      │
+     │                       │  docker pull         │
+     │                       ├─────────────────────>│
+     │                       │                      │
+     │                       │   Store & Distribute │
+     └───────────────────────┴──────────────────────┘
 ```
 
 ---
 
-## Kubernetes: Container Orchestration
+## What is a Container Registry?
 
-**Why you need it:**
-
-| Feature | Docker Compose | Kubernetes |
-|---------|---------------|------------|
-| Multi-node | ❌ | ✅ |
-| Auto-scaling | ❌ | ✅ |
-| Self-healing | ❌ | ✅ |
-| Rolling updates | ❌ | ✅ |
-| Service discovery | Basic | Advanced |
-| Production-ready | ❌ | ✅ |
-
----
-
-## Kubernetes Architecture
+**Centralized storage for Docker images**
 
 ```
 ┌─────────────────────────────────────────┐
-│         Control Plane                   │
-│  ┌─────────┐ ┌─────────┐ ┌─────────┐   │
-│  │ API     │ │Scheduler│ │Controller│   │
-│  │ Server  │ │         │ │ Manager │   │
-│  └────┬────┘ └────┬────┘ └────┬────┘   │
-│       └───────────┼───────────┘         │
-│                   │ etcd                  │
-└───────────────────┼─────────────────────┘
-                    │
-┌───────────────────┼─────────────────────┐
-│         Worker Nodes                    │
-│  ┌──────────┐    ┌──────────┐          │
-│  │ kubelet  │◄───│ kubelet  │          │
-│  │containerd│    │containerd│          │
-│  │ Pods     │    │ Pods     │          │
-│  └──────────┘    └──────────┘          │
+│           Container Registry            │
+├─────────────────────────────────────────┤
+│  Organization / User                    │
+│  ├─ Repository: myapp                   │
+│  │  ├─ Tag: v1.0                        │
+│  │  ├─ Tag: v1.1                        │
+│  │  └─ Tag: latest                      │
+│  ├─ Repository: api                     │
+│  └─ Repository: worker                  │
 └─────────────────────────────────────────┘
 ```
 
 ---
 
-## The Cloud Native Landscape
+## What is a Container Registry?
 
-**What you will encounter:**
+**Key Concepts:**
+- **Repository** = Collection of related images (e.g., `myapp`)
+- **Tag** = Version identifier (e.g., `v1.0`, `latest`)
+- **Digest** = Immutable SHA256 hash
 
-```
-┌────────────────────────────────────────┐
-│          Service Mesh                   │
-│     (Istio, Linkerd, Consul)           │
-│    mTLS, traffic management            │
-├────────────────────────────────────────┤
-│          Observability                  │
-│  (Prometheus, Grafana, Jaeger)         │
-│    Metrics, logs, traces               │
-├────────────────────────────────────────┤
-│          GitOps                         │
-│     (ArgoCD, Flux)                     │
-│    Declarative deployments             │
-├────────────────────────────────────────┤
-│          Registry & Security            │
-│  (Harbor, Trivy, Sigstore)             │
-│    Image scanning, signing             │
-└────────────────────────────────────────┘
+---
+
+## Popular Container Registries
+
+| Registry | Provider | Best For | Pricing |
+|----------|----------|----------|---------|
+| **Docker Hub** | Docker | Personal/Open Source | Free (public) |
+| **GHCR** | GitHub | GitHub projects | Free |
+| **Quay.io** | Red Hat | Enterprise | Free tier |
+| **ECR** | AWS | AWS deployments | Pay per GB |
+| **GCR/Artifact Registry** | Google | GCP deployments | Pay per GB |
+| **ACR** | Azure | Azure deployments | Pay per GB |
+| **Harbor** | CNCF | Self-hosted | Free (open source) |
+
+---
+
+## Docker Hub Deep Dive
+
+**Default registry for Docker**
+
+```bash
+# Pull from Docker Hub (default)
+docker pull nginx:latest
+
+# Pull from specific registry
+docker pull ghcr.io/username/myapp:v1.0
+docker pull quay.io/podman/stable
 ```
 
 ---
 
-## Serverless Containers
+## Docker Hub Deep Dive
 
-**The next evolution:**
+**Image naming:**
+```
+# Docker Hub (official)
+nginx:latest
+redis:7-alpine
 
-| Platform | Use Case |
-|----------|----------|
-| **AWS Fargate** | Run containers without managing servers |
-| **Google Cloud Run** | Scale to zero, pay per request |
-| **Azure Container Instances** | Simple container execution |
+# Docker Hub (user/org)
+username/myapp:v1.0
+myorg/api:2.1.0
 
-**Benefit:** No nodes to manage, just deploy and run
+# Other registries
+registry.example.com/myapp:v1.0
+ghcr.io/username/myapp:v1.0
+```
 
 ---
 
-## WebAssembly (Wasm)
+## Public vs Private Registries
 
-**The future of containers?**
+**Public Repositories:**
+- ✅ Free on Docker Hub
+- ✅ Anyone can pull
+- ✅ Great for open source
+- ❌ Code is visible to everyone
+
+---
+
+## Public vs Private Registries
+
+**Private Repositories:**
+- ✅ Restricted access
+- ✅ For proprietary code
+- ❌ Limited free tier (Docker Hub: 1 private repo)
+- ❌ Need authentication
+
+---
+
+## Public vs Private Registries
+
+**Recommendation:**
+- Open source projects → Public
+- Company/internal apps → Private
+
+---
+
+## Image Tagging Strategies
+
+**Don't just use `latest`!**
+
+```bash
+# ❌ Bad practice (unclear version)
+docker push myapp:latest
+
+# ✅ Good practice (semantic versioning)
+docker push myapp:1.0.0
+docker push myapp:1.0
+docker push myapp:1
+
+# ✅ Also tag with latest for convenience
+docker tag myapp:1.0.0 myapp:latest
+docker push myapp:latest
+```
+
+---
+
+## Image Tagging Strategies
+
+**Tag hierarchy:**
+```
+myapp:1.0.0  → Specific version (production)
+myapp:1.0    → Minor version rollup
+myapp:1      → Major version rollup
+myapp:latest → Most recent (convenience)
+```
+
+---
+
+## Pushing Images
+
+**Workflow:**
+
+```bash
+# 1. Build your image
+docker build -t myapp:1.0 .
+
+# 2. Tag with your Docker Hub username
+docker tag myapp:1.0 yourusername/myapp:1.0
+
+# 3. Login (if not already)
+docker login
+
+# 4. Push
+docker push yourusername/myapp:1.0
+
+# 5. Push latest too
+docker tag myapp:1.0 yourusername/myapp:latest
+docker push yourusername/myapp:latest
+```
+
+---
+
+## Pulling Images
+
+**From any machine:**
+
+```bash
+# Login (required for private repos)
+docker login
+
+# Pull your image
+docker pull yourusername/myapp:1.0
+
+# Run it
+docker run -d -p 3000:3000 yourusername/myapp:1.0
+
+# Pull from other registries
+docker pull ghcr.io/username/myapp:v1.0
+docker pull quay.io/organization/app:latest
+```
+---
+
+<!-- _class: lead -->
+
+# 🏃 Exercise 4
+
+## Container Registry & Docker Hub
+
+**25 minutes**
+
+See `exercise-04-container-registry/README.md`
+
+---
+
+## Container Orchestration
+
+**Problem:** Managing containers at scale is hard
 
 ```
-Traditional Container:          Wasm Module:
-┌──────────────┐                ┌──────────────┐
-│ App + OS libs│                │    App       │
-│ 50-200MB     │                │    1-5MB     │
-│ Seconds boot │                │ Milliseconds │
-└──────────────┘                └──────────────┘
+Single Container:           Multiple Containers:
+┌──────────────┐            ┌─────────────────┐
+│  docker run  │            │  Which failed?  │
+│  docker ps   │            │  Where's logs?  │
+│  docker logs │            │  How to scale?  │
+└──────────────┘            └─────────────────┘
+   ✅ Easy                      ❌ Complex
 ```
 
-**Projects:** WasmEdge, Wasmtime, runwasi
+---
 
-**Use case:** Edge computing, plugins, sandboxing
+## Why Orchestration?
+
+**Production needs:**
+
+✅ **High Availability** - Auto-restart failed containers  
+✅ **Scaling** - Handle traffic spikes automatically  
+✅ **Rolling Updates** - Zero-downtime deployments  
+✅ **Resource Optimization** - Pack containers efficiently  
+✅ **Service Discovery** - Containers find each other  
+✅ **Configuration Management** - Secrets, configs centralized  
+
+---
+
+## Orchestration Tools
+
+| Tool | Provider | Best For |
+|------|----------|----------|
+| **Kubernetes (K8s)** | CNCF | Industry standard, any cloud |
+| **Docker Swarm** | Docker | Simple, Docker-native |
+| **Nomad** | HashiCorp | Simple, flexible workloads |
+| **ECS** | AWS | AWS-native deployments |
+| **AKS** | Azure | Azure-managed K8s |
+| **GKE** | Google | Google-managed K8s |
 
 ---
 
@@ -783,13 +923,13 @@ docker run -e API_KEY=$API_KEY app
 
 <!-- _class: lead -->
 
-# 🏃 Exercise 4
+# 🏃 Exercise 5
 
 ## Security Hardening
 
-**15 minutes**
+**20 minutes**
 
-See `exercise-04-production/README.md`
+See `exercise-05-production/README.md`
 
 ---
 
@@ -812,13 +952,11 @@ trivy image myapp:latest
 │  1. Containers = App + Dependencies      │
 │  2. Linux kernel powers containers       │
 │  3. Dockerfile = Build recipe            │
-│  4. Multi-stage = Smaller images         │
-│  5. Compose = Multi-container            │
-│  6. Kubernetes = Production orchestration│
-│  7. Ecosystem = Docker is just the start │
+│  4. Compose = Multi-container            │
+│  5. Registries = Share & distribute      │
+│  6. Orchestration = Scale & manage       │
+│  7. Security = Production ready          │
 └──────────────────────────────────────────┘
-
-Next steps: k8s.io, kind.sigs.k8s.io, cncf.io
 ```
 
 ---
